@@ -17,16 +17,18 @@ export function About() {
           
           <div className="space-y-4">
             <p className="text-lg text-gray-700">
-              I'm a passionate software engineer with over 5 years of experience building web applications.
-              I specialize in creating responsive, user-friendly interfaces and robust backend systems.
+              I'm a software engineer with nearly 3 years of experience building web applications. My work spans
+              frontend development—crafting intuitive interfaces and proposing user-experience improvements—and
+              blockchain problems such as smart contracts, on-chain/off-chain integrations, and designing
+              decentralized systems.
             </p>
             <p className="text-lg text-gray-700">
-              My journey in software development started with a curiosity about how things work,
-              and it has evolved into a career where I get to solve real-world problems through code.
+              I specialize in building responsive frontends, reliable backends, and optimizing performance for
+              distributed applications and blockchain-based products, including integrations with non-custodial wallets.
             </p>
             <p className="text-lg text-gray-700">
-              When I'm not coding, you can find me contributing to open-source projects,
-              learning new technologies, or sharing my knowledge through technical blog posts.
+              Outside of work, I contribute to open-source projects, explore new protocols, and share technical
+              insights through blog posts.
             </p>
           </div>
         </div>

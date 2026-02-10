@@ -49,8 +49,13 @@ export function Projects() {
                 className="w-full h-48 object-cover"
               />
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
+                <div className="flex items-start justify-between w-full">
+                  <div>
+                    <CardTitle>{project.title}</CardTitle>
+                    <CardDescription>{project.description}</CardDescription>
+                  </div>
+                  <Badge variant="secondary">Coming soon</Badge>
+                </div>
               </CardHeader>
               <CardContent className="flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -62,17 +67,12 @@ export function Projects() {
                 </div>
                 
                 <div className="flex gap-3 mt-auto">
-                  <Button variant="outline" size="sm" asChild className="flex-1">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </a>
-                  </Button>
-                  <Button size="sm" asChild className="flex-1">
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Demo
-                    </a>
+                  {/* <Button variant="outline" size="sm" disabled className="flex-1 opacity-60 cursor-not-allowed">
+                    <Github className="w-4 h-4 mr-2" />
+                  </Button> */}
+                  <Button size="sm" disabled className="flex-1 opacity-60 cursor-not-allowed">
+                    {/* <ExternalLink className="w-4 h-4 mr-2" /> */}
+                    Coming soon
                   </Button>
                 </div>
               </CardContent>

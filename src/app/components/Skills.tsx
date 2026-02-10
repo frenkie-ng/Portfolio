@@ -4,33 +4,23 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 const skills = [
   {
     icon: Code2,
-    title: 'Frontend Development',
-    items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vue.js']
+    title: 'Frontend',
+    items: ['React', 'TypeScript', 'Tailwind CSS']
   },
   {
     icon: Database,
-    title: 'Backend Development',
-    items: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'REST APIs']
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud & DevOps',
-    items: ['AWS', 'Docker', 'CI/CD', 'Kubernetes', 'Vercel']
-  },
-  {
-    icon: Smartphone,
-    title: 'Mobile Development',
-    items: ['React Native', 'Flutter', 'iOS', 'Android', 'Progressive Web Apps']
+    title: 'Backend',
+    items: ['Node.js', 'REST APIs', 'Postgres / MongoDB']
   },
   {
     icon: GitBranch,
-    title: 'Tools & Workflow',
-    items: ['Git', 'GitHub', 'VS Code', 'Jira', 'Figma']
+    title: 'Tools',
+    items: ['Git', 'GitHub', 'VS Code', 'Figma']
   },
   {
-    icon: Palette,
-    title: 'Design & UX',
-    items: ['UI/UX Design', 'Responsive Design', 'Accessibility', 'Prototyping']
+    icon: Cloud,
+    title: 'Blockchain',
+    items: ['Coming soon']
   }
 ];
 

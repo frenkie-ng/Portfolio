@@ -7,7 +7,7 @@ export function Hero() {
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-8">
           <h1 className="mb-4">
-            Hi, I'm <span className="text-blue-600">Alex Johnson</span>
+            Hi, I'm <span className="text-blue-600">Dung Nguyen</span>
           </h1>
           <h2 className="text-4xl mb-6">Software Engineer</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">

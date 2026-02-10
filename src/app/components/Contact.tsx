@@ -27,7 +27,7 @@ export function Contact() {
                   <Mail className="w-5 h-5 text-blue-600" />
                   Email
                 </CardTitle>
-                <CardDescription>alex.johnson@example.com</CardDescription>
+                <CardDescription>nguyentiendung.me@gmail.com</CardDescription>
               </CardHeader>
             </Card>
 
@@ -37,7 +37,7 @@ export function Contact() {
                   <Phone className="w-5 h-5 text-blue-600" />
                   Phone
                 </CardTitle>
-                <CardDescription>+1 (555) 123-4567</CardDescription>
+                <CardDescription>+84 0814016810</CardDescription>
               </CardHeader>
             </Card>
 
