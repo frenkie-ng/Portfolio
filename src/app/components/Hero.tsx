@@ -29,9 +29,8 @@ export function Hero() {
            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="text-sky-500 font-mono text-[10px] tracking-[1.2em] uppercase mb-12 opacity-60">Architecting Digital Systems</p>
-          <h1 className="text-6xl md:text-[10rem] font-serif font-light text-white mb-12 tracking-tighter leading-[0.85]">
-            {name.split(' ')[0]}<br/>
-            <span className="italic font-extralight text-sky-400">{name.split(' ')[1]}</span>
+          <h1 className="text-5xl md:text-[8rem] font-serif font-light text-white mb-12 tracking-tighter whitespace-nowrap">
+            {name.split(' ')[0]} <span className="italic font-extralight text-sky-400">{name.split(' ')[1]}</span>
           </h1>
         </motion.div>
 
