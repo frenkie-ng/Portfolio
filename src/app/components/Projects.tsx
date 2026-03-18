@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { Github, ExternalLink, Play, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Github, ExternalLink, Cpu, Code2, ArrowRight } from 'lucide-react';
 import { Magnetic } from './ui/Magnetic';
 
 function ImageWithFallback({ src, alt, className }: { src: string; alt: string; className?: string }) {
@@ -26,69 +26,82 @@ export function Projects() {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66.6%"]);
 
   return (
-    <section id="projects" ref={targetRef} className="relative h-[300vh] bg-[#020203]">
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        <div className="absolute top-20 left-12 md:left-24 z-20">
-            <h2 className="text-6xl md:text-9xl font-serif font-light tracking-tighter text-[#f8fafc] opacity-20">
-              Visual <span className="italic font-extralight text-sky-400">Works</span>
+    <section id="projects" ref={targetRef} className="relative h-[300vh] bg-[#020202] bg-grid border-b border-sky-500/5">
+      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+        
+        {/* Header Alignment */}
+        <div className="section-container mb-20 space-y-6">
+            <div className="flex items-center gap-4 text-sky-500 font-mono text-[10px] tracking-[0.5em] uppercase opacity-40">
+               <Cpu size={14} /> / PROJECT_SEQUENCES
+            </div>
+            <h2 className="text-6xl md:text-8xl font-serif font-light tracking-tighter text-white">
+              Technical <span className="italic font-extralight text-sky-400">Works</span>
             </h2>
         </div>
 
+        {/* Horizontal Reel */}
         <motion.div style={{ x }} className="flex gap-20 px-12 md:px-24">
           {portfolioData.projects.map((project, index) => (
             <div
               key={project.id}
-              className="group relative flex-shrink-0 w-[85vw] md:w-[65vw] aspect-[2.35/1] overflow-hidden border border-sky-500/10 bg-slate-900/5"
+              className="group relative flex-shrink-0 w-[85vw] md:w-[65vw] aspect-[2.35/1] overflow-hidden border border-sky-500/10 bg-slate-900/10"
             >
               <ImageWithFallback
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.5s] ease-out"
+                className="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-10 transition-all duration-[1.5s] ease-out"
               />
               
-              {/* Artistic Overlay Content */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020203] via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-700" />
-              
-              <div className="absolute inset-0 p-12 flex flex-col justify-end">
-                <div className="flex items-center gap-6 mb-4 opacity-60">
-                   <span className="text-sky-500 text-[10px] font-black uppercase tracking-[0.4em]">{project.type}</span>
-                   <div className="h-[1px] w-12 bg-sky-500/20" />
-                   <span className="text-slate-500 text-[10px] font-black uppercase tracking-[0.4em]">Project 0{index + 1}</span>
-                </div>
-                
-                <h3 className="text-4xl md:text-6xl font-serif font-light text-[#f8fafc] mb-6 tracking-tight">
-                  {project.title}
-                </h3>
-                
-                <div className="flex items-center gap-12 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-700">
-                  <Magnetic>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-slate-400 hover:text-[#f8fafc] transition-colors text-[10px] font-black uppercase tracking-[0.4em]">
-                      <Github size={18} /> Source File
-                    </a>
-                  </Magnetic>
-                  <Magnetic>
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-sky-400 hover:text-sky-300 transition-colors text-[10px] font-black uppercase tracking-[0.4em]">
-                      <ExternalLink size={18} /> Live Sequence
-                    </a>
-                  </Magnetic>
+              {/* Technical Detail Overlays */}
+              <div className="absolute inset-0 p-16 flex flex-col justify-end">
+                <div className="grid lg:grid-cols-12 gap-12 items-end">
+                   <div className="lg:col-span-8 space-y-8">
+                      <div className="flex items-center gap-4 font-mono text-[9px] text-sky-500/40 uppercase tracking-widest">
+                         <span>ID: P-0{index + 1}</span>
+                         <span className="w-1 h-1 rounded-full bg-sky-500/20" />
+                         <span>EST_2024</span>
+                      </div>
+                      <h3 className="text-5xl md:text-7xl font-serif font-light text-white tracking-tighter">
+                        {project.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-3">
+                        {['React', 'Node', 'TypeScript', 'Tailwind'].map(tech => (
+                          <span key={tech} className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                   </div>
+                   
+                   <div className="lg:col-span-4 flex gap-12 justify-end pb-2">
+                     <Magnetic>
+                       <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-slate-500 hover:text-sky-400 transition-colors">
+                         SOURCE_CODE
+                       </a>
+                     </Magnetic>
+                     <Magnetic>
+                       <a href={project.demo} target="_blank" rel="noopener noreferrer" className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-sky-400 hover:text-white transition-colors">
+                         RUN_SEQUENCE
+                       </a>
+                     </Magnetic>
+                   </div>
                 </div>
               </div>
             </div>
           ))}
           
-          {/* "The End" Signal */}
-          <div className="flex-shrink-0 w-[50vw] flex flex-col justify-center items-center text-center px-12">
-             <p className="text-sky-500 text-[10px] font-black uppercase tracking-[1em] mb-8">End of Reel</p>
-             <h4 className="text-4xl font-serif italic font-extralight text-slate-700">More sequences in production.</h4>
-             <div className="mt-20 flex items-center gap-4 group cursor-pointer" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-slate-500 group-hover:text-sky-400 transition-colors">Go to Inquiries</span>
-                <ArrowRight className="text-sky-400 group-hover:translate-x-2 transition-transform" size={16} />
+          {/* Transition */}
+          <div className="flex-shrink-0 w-[40vw] flex flex-col justify-center items-start pl-20 border-l border-sky-500/5">
+             <h4 className="text-3xl font-serif italic font-extralight text-slate-600 mb-12">Next sequence in development.</h4>
+             <div className="flex items-center gap-6 group cursor-pointer" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.4em] text-slate-500 group-hover:text-sky-400 transition-colors">DISPATCH_MESSAGE</span>
+                <ArrowRight className="text-sky-400 group-hover:translate-x-3 transition-transform" size={16} />
              </div>
           </div>
         </motion.div>
 
-        {/* Scroll Progress Indicator */}
-        <div className="absolute bottom-20 left-12 md:left-24 right-12 md:right-24 h-[1px] bg-slate-900">
+        {/* Global Progress Indicator */}
+        <div className="absolute bottom-12 left-0 w-full h-[1px] bg-sky-500/5">
            <motion.div 
              className="h-full bg-sky-500/40"
              style={{ scaleX: scrollYProgress, originX: 0 }}

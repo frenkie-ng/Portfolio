@@ -35,25 +35,25 @@ export function Navigation() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ${isScrolled ? 'py-4' : 'py-12'}`}>
-      <div className="max-w-7xl mx-auto px-6">
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ${isScrolled ? 'py-4' : 'py-10'}`}>
+      <div className="section-container">
         <div className={`
           flex items-center justify-between transition-all duration-1000 px-12 py-6
-          ${isScrolled ? 'bg-[#050505]/60 backdrop-blur-2xl border-x border-sky-500/10' : 'bg-transparent'}
+          ${isScrolled ? 'bg-[#020202] border border-sky-500/10' : 'bg-transparent'}
         `}>
           <Magnetic>
-            <a href="#hero" className="text-3xl font-serif font-light tracking-tighter text-[#f8fafc] group">
+            <a href="#hero" className="text-2xl font-serif font-light tracking-tighter text-white group">
               DUNG<span className="italic font-extralight text-sky-400">.</span>
             </a>
           </Magnetic>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-16">
+          <div className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
               <Magnetic key={link.name}>
                 <a
                   href={link.href}
-                  className={`relative text-[10px] font-black uppercase tracking-[0.5em] transition-all ${
+                  className={`relative text-[9px] font-mono font-bold uppercase tracking-[0.4em] transition-all ${
                     activeSection === link.href.slice(1) ? 'text-sky-400' : 'text-slate-500 hover:text-sky-300'
                   }`}
                 >
@@ -63,7 +63,7 @@ export function Navigation() {
                       layoutId="navIndicator"
                       className="absolute -bottom-8 left-1/2 -translate-x-1/2"
                     >
-                      <Circle size={4} fill="currentColor" className="text-sky-400" />
+                      <Circle size={3} fill="currentColor" className="text-sky-400" />
                     </motion.div>
                   )}
                 </a>
@@ -72,7 +72,7 @@ export function Navigation() {
           </div>
 
           <button className="md:hidden text-sky-400" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>

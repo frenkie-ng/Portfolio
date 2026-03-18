@@ -10,45 +10,54 @@
   --font-size: 16px;
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Cormorant Garamond', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   
-  /* Minimalist Artistic Palette (Deep Obsidian & Cyan Gold) */
-  --background: #020203;
-  --foreground: #fcfcfc;
-  --card: rgba(10, 10, 15, 0.7);
-  --card-foreground: #f8fafc;
-  --popover: #050505;
-  --popover-foreground: #f8fafc;
-  --primary: #0ea5e9; /* Cinematic Teal */
-  --primary-foreground: #050505;
-  --secondary: #fbbf24; /* Cinematic Gold */
-  --secondary-foreground: #050505;
-  --muted: #0f172a;
-  --muted-foreground: #64748b;
-  --accent: #fbbf24;
-  --accent-foreground: #050505;
-  --destructive: #7f1d1d;
-  --destructive-foreground: #f8fafc;
+  /* High-Precision Technical Palette */
+  --background: #020202;
+  --foreground: #ffffff;
+  --card: rgba(5, 5, 8, 0.8);
+  --card-foreground: #ffffff;
+  --popover: #020202;
+  --popover-foreground: #ffffff;
+  --primary: #0ea5e9; /* Sky / Cyan */
+  --primary-foreground: #020202;
+  --secondary: #fbbf24; /* Precision Gold */
+  --secondary-foreground: #020202;
+  --muted: #08080a;
+  --muted-foreground: #4b5563;
+  --accent: #0ea5e9;
+  --accent-foreground: #020202;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
   --border: rgba(14, 165, 233, 0.1);
   --input: transparent;
-  --input-background: rgba(14, 165, 233, 0.02);
-  --switch-background: #1e293b;
-  --font-weight-medium: 500;
-  --font-weight-normal: 300;
-  --ring: #0ea5e9;
-  --chart-1: #0ea5e9;
-  --chart-2: #fbbf24;
-  --chart-3: #38bdf8;
-  --chart-4: #fcd34d;
-  --chart-5: #1e293b;
-  --radius: 0.1rem; /* Minimalist sharp edges */
-  --sidebar: #050505;
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #0ea5e9;
-  --sidebar-primary-foreground: #050505;
-  --sidebar-accent: #0f172a;
-  --sidebar-accent-foreground: #f8fafc;
-  --sidebar-border: rgba(14, 165, 233, 0.1);
-  --sidebar-ring: #0ea5e9;
+  --input-background: rgba(14, 165, 233, 0.01);
+  --radius: 0rem;
+  --container-max: 1400px;
+}
+
+.section-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.section-padding {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+/* Engineering Overlays */
+.bg-grid {
+  background-image: 
+    linear-gradient(to right, rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 .dark {
